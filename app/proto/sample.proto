@@ -1,0 +1,28 @@
+syntax = 'proto3';
+
+package sample;
+
+option go_package = "github.com/terashi58/wire-sample/app/proto";
+
+service Greeter {
+  rpc HelloWorld(HelloWorldRequest) returns (HelloWorldResponse);
+}
+
+message HelloWorldRequest {
+}
+
+message HelloWorldResponse {
+  string message = 1;
+}
+
+service Pinger {
+  rpc Ping(PingRequest) returns (PingResponse);
+}
+
+message PingRequest {
+  string ping = 1;
+}
+
+message PingResponse {
+  string pong = 1;
+}
